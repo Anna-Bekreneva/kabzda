@@ -10,12 +10,13 @@ function App(props: any) {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     const [switchOn, setSwitchOn] = useState<boolean>(false)
+    const items = [{title: 'Anna', value: 1}, {title: 'Anka', value: 1}]
 
     return (
         <>
             {/*<UncontrolledAccordion titleValue={'Menu'}/>*/}
 
-            <Accordion collapsed={accordionCollapsed} titleValue={"Users"} onChange={() => (setAccordionCollapsed(!accordionCollapsed))}></Accordion>
+            <Accordion collapsed={false} items={items} onClick={() => {}} titleValue={"Users"} onChange={() => (setAccordionCollapsed(!accordionCollapsed))}></Accordion>
 
             {/*<UncontrolledRating/>*/}
 
