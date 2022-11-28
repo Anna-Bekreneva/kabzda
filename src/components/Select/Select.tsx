@@ -67,6 +67,5 @@ export function Select (props: SelectPropsType) {
 				</div>
 		}
 		</div>
-
 	);
 }
