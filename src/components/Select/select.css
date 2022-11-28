@@ -1,0 +1,10 @@
+.select__box {
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.4s;
+}
+
+.select__box--open {
+    opacity: 1;
+    overflow: visible;
+}
