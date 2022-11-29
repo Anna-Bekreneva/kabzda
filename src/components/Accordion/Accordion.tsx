@@ -38,11 +38,13 @@ type AccordionBodyPropsType = {
     onClick: (value: any) => void
 }
 
-function AccordionTitle(props: AccordionTitlePropsType) {
+function AccordionTitleSecret(props: AccordionTitlePropsType) {
     return <h3 onClick={(e) => props.onChange()} style={{color: props.color ? props.color : "black"}}>---{props.title}---</h3>
 }
 
-function AccordionBody(props: AccordionBodyPropsType) {
+const AccordionTitle = React.memo(AccordionTitleSecret)
+
+function AccordionBodySecret(props: AccordionBodyPropsType) {
     console.log("AccordionBody rendering")
 
     return (
@@ -51,3 +53,5 @@ function AccordionBody(props: AccordionBodyPropsType) {
         </ul>
     )
 }
+
+const AccordionBody = React.memo(AccordionBodySecret)
