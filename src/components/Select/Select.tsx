@@ -1,4 +1,4 @@
-import React, {useState, KeyboardEvent, useEffect} from 'react';
+import React, {useState, KeyboardEvent, useEffect, useMemo} from 'react';
 import styles from './select.module.css';
 
 export type SelectPropsType = {
@@ -7,13 +7,16 @@ export type SelectPropsType = {
 	items: Array<ItemType>
 }
 
-type ItemType = {
+export type ItemType = {
 	title: string
 	value: any
+	country?: CountryType
+	people?: number
 }
 
-export function Select (props: SelectPropsType) {
+type CountryType = "Russia" | "Ukraine" | "Belarus"
 
+export function Select (props: SelectPropsType) {
 	const [active, setActive] = useState(false);
 	const [hoveredElementValue, setHoveredElementValue] = useState(props.value);
 

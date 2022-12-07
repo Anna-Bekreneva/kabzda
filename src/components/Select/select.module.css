@@ -13,6 +13,7 @@
     position: absolute;
     padding: 5px;
     display: block;
+    background-color: white;
 }
 
 .item.selected {
