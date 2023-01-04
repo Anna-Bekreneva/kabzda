@@ -56,4 +56,28 @@ export const SetTimeoutExample = () => {
 	)
 }
 
+export const SimpleClockExample = () => {
+	const [date, setDate] = useState(getTime)
+	console.log('SimpleClockExample')
+	useEffect(() => {
+		setInterval(() => {
+			setDate(getTime())
+		}, 1000)
+	}, [])
+
+	function getTime(){
+		let date = new Date(),
+			hours = (date.getHours() < 10) ? '0' + date.getHours() : date.getHours(),
+			minutes = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes(),
+			seconds = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds();
+		return {hours, minutes, seconds}
+	}
+
+	return (
+		<>
+			{date.hours + ':' + date.minutes + ':' + date.seconds}
+		</>
+	)
+}
+
 
